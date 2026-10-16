@@ -31,4 +31,4 @@ jobs:
           BRACES_BASELINE_PATH: ${{ runner.temp }}/braces-baseline/node_modules/braces
         run: node test/differential-3.0.3.js
       - name: Check bounded security resource scenarios
-        run: node test/security-resources.js
+        run: node scripts/security-resources.js
