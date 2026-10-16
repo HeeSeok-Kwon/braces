@@ -29,7 +29,7 @@ const payload = [
   "} else { throw new Error('Unsupported scenario'); }",
   "const ok = mode === 'bounded'",
   "  ? Array.isArray(result) && result.length === Math.pow(2, depth)",
-  "  : (mode === 'ast' ? Array.isArray(result) && result.length === 1 && result[0] === 'a' : result === 'a');",
+  "  : (mode === 'ast' ? Array.isArray(result) && result.length === 1 && result[0] === 'a' : result === '('.repeat(depth) + 'a' + ')'.repeat(depth));",
   "if (!ok) throw new Error('Unexpected output');",
   "process.stdout.write(JSON.stringify({elapsedMs: Date.now() - start, rssBytes: process.memoryUsage().rss}));"
 ].join('\n');
